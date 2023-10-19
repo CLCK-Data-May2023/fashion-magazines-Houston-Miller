@@ -1,5 +1,5 @@
 SELECT customer_name AS Customer,
-    PRINTF('$%.2F', SUM(subscriptions.subscription_length * subscriptions.price_per_month)) AS 'Amount Due'
+    PRINTF('$%.2f', SUM(subscriptions.subscription_length * subscriptions.price_per_month), 2) AS 'Amount Due'
 FROM orders
 JOIN customers
     ON orders.customer_id = customers.customer_id
